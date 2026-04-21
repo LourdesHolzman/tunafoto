@@ -81,19 +81,19 @@ export default function Contacto() {
             className="flex flex-wrap justify-center md:justify-start items-center gap-x-6 gap-y-4 text-[11px] tracking-[0.3em] text-gray-600"
           >
 
-            <a href="#" className="hover:text-black transition duration-500">
+            <a href="https://www.instagram.com/tuna_foto/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition duration-500">
               INSTAGRAM
             </a>
 
             <span className="hidden md:inline text-gray-300">•</span>
 
-            <a href="#" className="hover:text-black transition duration-500">
+            <a href="https://wa.me/542954545210" target="_blank" rel="noopener noreferrer" className="hover:text-black transition duration-500">
               WHATSAPP
             </a>
 
             <span className="hidden md:inline text-gray-300">•</span>
 
-            <a href="#" className="hover:text-black transition duration-500">
+            <a href="https://www.facebook.com/tunafoto/" target="_blank" rel="noopener noreferrer" className="hover:text-black transition duration-500">
               FACEBOOK
             </a>
 

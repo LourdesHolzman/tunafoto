@@ -106,7 +106,7 @@ export default function Fotografia() {
           transition={{ duration: 0.4 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h1 className="text-2xl md:text-4xl font-light mb-6 tracking-wide">
+          <h1 className="text-2xl md:text-4xl font-light mb-6 tracking-[0.2em]">
             {active.name}
           </h1>
 
