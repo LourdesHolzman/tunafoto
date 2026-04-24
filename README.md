@@ -38,6 +38,8 @@ CLOUDINARY_API_KEY=tu_api_key
 CLOUDINARY_API_SECRET=tu_api_secret
 ```
 
+Opcionalmente, podés configurar las URLs de videos, galerías de clientes y redes sociales con variables `NEXT_PUBLIC_*` (ver `.env.example` para la lista completa).
+
 ## Licencia
 
 Proyecto privado. Todos los derechos reservados.
