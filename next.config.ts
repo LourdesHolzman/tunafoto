@@ -7,10 +7,9 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
+      ...(process.env.NODE_ENV !== "production"
+        ? [{ protocol: "https" as const, hostname: "picsum.photos" }]
+        : []),
     ],
   },
 };

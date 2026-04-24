@@ -45,6 +45,9 @@ export async function GET(req: Request) {
   }
 
   if (!isCloudinaryConfigured) {
+    if (process.env.NODE_ENV === "production") {
+      return NextResponse.json([]);
+    }
     return NextResponse.json(getMockImages(folder));
   }
 
@@ -61,7 +64,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json(images);
   } catch (error) {
-    console.error("Cloudinary error:", error);
+    console.error("Cloudinary search failed for folder:", folder);
     return NextResponse.json([]);
   }
 }

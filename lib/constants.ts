@@ -63,13 +63,6 @@ export const VIDEOS = [
   },
 ];
 
-// Client galleries
-export const GALERIAS: Record<string, string> = {
-  emma: process.env.NEXT_PUBLIC_GALLERY_EMMA_URL ?? "",
-  sample: process.env.NEXT_PUBLIC_GALLERY_SAMPLE_URL ?? "",
-  evento: process.env.NEXT_PUBLIC_GALLERY_EVENTO_URL ?? "",
-};
-
 // Social links
 export const SOCIAL_LINKS = {
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/tuna_foto/",
