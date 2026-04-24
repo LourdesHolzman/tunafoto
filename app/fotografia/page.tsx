@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Fotografia() {
@@ -63,11 +63,21 @@ export default function Fotografia() {
   };
 
  // 🔥 FETCH AUTOMATICO DE IMAGENES
-  useEffect(() => {
-    fetch(`/api/imagenes?folder=${active.slug}`)
-      .then((res) => res.json())
-      .then((data) => setImagenes(data));
-  }, [active.slug]);
+  const cache = useRef<Record<string, string[]>>({});
+
+useEffect(() => {
+  if (cache.current[active.slug]) {
+    setImagenes(cache.current[active.slug]);
+    return;
+  }
+  setImagenes([]);
+  fetch(`/api/imagenes?folder=${active.slug}`)
+    .then((res) => res.json())
+    .then((data) => {
+      cache.current[active.slug] = data;
+      setImagenes(data);
+    });
+}, [active.slug]);
 
   return (
     <section className="min-h-screen bg-white text-black px-6 pt-28 pb-16">

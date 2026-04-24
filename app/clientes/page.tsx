@@ -8,11 +8,11 @@ export default function Clientes() {
   const [codigo, setCodigo] = useState("");
   const [error, setError] = useState("");
 
-  const galerias = {
-    emma: "https://tuna-118349.pixellu.gallery/emma",
-    sample: "https://pixellu-17244.pixellu.gallery/sample/all",
-    evento: "https://tugaleria.pixieset.com/evento",
-  };
+  const galerias: Record<string, string> = {
+  emma: "https://tuna-118349.pixellu.gallery/emma",
+  sample: "https://pixellu-17244.pixellu.gallery/sample/all",
+  evento: "https://tugaleria.pixieset.com/evento",
+};
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ export default function Clientes() {
 
         {/* TEXTO */}
         <p className="text-gray-600 text-[15px] leading-relaxed mb-12">    
-          Descargá tus imágenes y elegí tus favoritas para imprimir.
+          Descargá tus imágenes y elegí tus favoritas para imprimir en foto o fotolibro.
         </p>
 
         {/* FORM */}

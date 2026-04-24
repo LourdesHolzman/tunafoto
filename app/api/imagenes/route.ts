@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     const result = await cloudinary.search
       .expression(`folder:${folder}`)
       .sort_by("created_at", "desc")
-      .max_results(100)
+      .max_results(50)
       .execute();
 
    const images = result.resources.map((img: { secure_url: string }) =>
@@ -30,27 +30,3 @@ export async function GET(req: Request) {
     return NextResponse.json([]);
   }
 }
-
-
-{/*import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const folder = searchParams.get("folder");
-
-  if (!folder) return NextResponse.json([]);
-
-  const dirPath = path.join(process.cwd(), "public/fotografia", folder);
-
-  try {
-    const files = fs.readdirSync(dirPath);
-
-    const images = files.map((file) => `/fotografia/${folder}/${file}`);
-
-    return NextResponse.json(images);
-  } catch {
-    return NextResponse.json([]);
-  }
-}*/}
