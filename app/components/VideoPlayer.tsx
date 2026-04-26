@@ -15,7 +15,7 @@ export default function VideoPlayer({ src, titulo, descripcion }: VideoPlayerPro
   const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [showControls, setShowControls] = useState(false);
-  const hideTimeout = useRef<ReturnType<typeof setTimeout>>();
+const hideTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const manualPause = useRef(false);
 
   const togglePlay = useCallback(() => {
