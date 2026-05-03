@@ -6,10 +6,11 @@ export default function Hero() {
 
       {/* Imagen de fondo (optimized by Next.js) */}
       <Image
-        src="/emmaa.jpg"
+        src="/emmaa.webp"
         alt="Portada Tuna Fotografía"
         fill
         priority
+        quality={90}
         sizes="100vw"
         className="object-cover object-[40%_center] md:object-[center_20%]"
       />
@@ -27,9 +28,6 @@ export default function Hero() {
           Momentos únicos<br />para toda la vida
         </h1>
 
-        <p className="mt-4 max-w-xl text-lg text-gray-200 tracking-[0.4em]">
-          Registrando momentos.
-        </p>
       </div>
     </section>
   );
