@@ -6,13 +6,20 @@ export default function Hero() {
 
       {/* Imagen de fondo (optimized by Next.js) */}
       <Image
-        src="/emmaa.webp"
+        src="/emmaa.jpg"
         alt="Portada Tuna Fotografía"
         fill
         priority
-        quality={90}
         sizes="100vw"
-        className="object-cover object-[40%_center] md:object-[center_20%]"
+        className="object-cover object-[40%_center] md:object-[center_20%] block md:block hidden md:block"
+      />
+      <Image
+        src="/emmaa-mobile2.jpg"
+        alt="Portada Tuna Fotografía"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center block md:hidden"
       />
 
       {/* Overlay */}
