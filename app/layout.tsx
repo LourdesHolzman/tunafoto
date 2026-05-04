@@ -15,13 +15,35 @@ export const metadata: Metadata = {
     template: "%s | Tuna Fotografía",
   },
   description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+  keywords: ["fotógrafa", "fotografía profesional", "sesiones de fotos", "fotografía de familia", "fotografía de embarazo", "fotografía infantil", "Argentina"],
   verification: { 
-    google: "8eL7HJex6fdLJctyDnrOEjaGWZiFVGT4XfUKhnmiGXs"
-  },
+      google: "8eL7HJex6fdLJctyDnrOEjaGWZiFVGT4XfUKhnmiGXs"
+    },
   openGraph: {
     siteName: "Tuna Fotografía",
     locale: "es_AR",
     type: "website",
+    title: "Tuna Fotografía",
+    description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+    url: "https://tunafoto.com",
+    images: [
+      {
+        url: "/emmaa.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tuna Fotografía",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tuna Fotografía",
+    description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+    images: ["/emmaa.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
