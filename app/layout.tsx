@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
      <ScrollToTop />
      <Analytics />
      </body>
-     <GoogleAnalytics gaId="G-5TGZXKLLK3" />
+     <GoogleAnalytics gaId="G-5TGZXKLLKJ" />
     </html>
   );
 }
