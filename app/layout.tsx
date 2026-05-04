@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     template: "%s | Tuna Fotografía",
   },
   description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+  verification: { 
+    google: "8eL7HJex6fdLJctyDnrOEjaGWZiFVGT4XfUKhnmiGXs"
+  },
   openGraph: {
     siteName: "Tuna Fotografía",
     locale: "es_AR",
