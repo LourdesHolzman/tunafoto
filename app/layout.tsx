@@ -13,34 +13,34 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://tunafoto.com"),
   title: {
-    default: "Tuna Fotografía",
-    template: "%s | Tuna Fotografía",
+    default: "Tuna - Fotografía y video",
+    template: "%s | Tuna - Fotografía y video",
   },
-  description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+  description: "Naturales, atemporales y espontáneas, capturando la esencia de cada historia. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
   keywords: ["fotógrafa", "fotografía profesional", "sesiones de fotos", "fotografía de familia", "fotografía de embarazo", "fotografía infantil", "Argentina"],
   verification: { 
       google: "8eL7HJex6fdLJctyDnrOEjaGWZiFVGT4XfUKhnmiGXs"
     },
   openGraph: {
-    siteName: "Tuna Fotografía",
+    siteName: "Tuna - Fotografía y video",
     locale: "es_AR",
     type: "website",
-    title: "Tuna Fotografía",
-    description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+    title: "Tuna - Fotografía y video",
+    description: "Naturales, atemporales y espontáneas, capturando la esencia de cada historia. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
     url: "https://tunafoto.com",
     images: [
       {
         url: "/emmaa.jpg",
         width: 1200,
         height: 630,
-        alt: "Tuna Fotografía",
+        alt: "Tuna - Fotografía y video",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tuna Fotografía",
-    description: "Fotografía y video profesional. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
+    title: "Tuna - Fotografía y video",
+    description: "Naturales, atemporales y espontáneas, capturando la esencia de cada historia. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
     images: ["/emmaa.jpg"],
   },
   robots: {
