@@ -29,7 +29,7 @@ function hashCode(code: string): string {
  */
 const MOCK_GALLERIES: Record<string, string> = {
   gaspar: "https://tuna-118349.pixellu.gallery/gaspar",
-  samp: "https://pixellu-17244.pixellu.gallery/sample/all",
+  amelí: "https://tuna-118349.pixellu.gallery/ameli",
   evento: "https://pixellu-17244.pixellu.gallery/sample/all",
 };
 
