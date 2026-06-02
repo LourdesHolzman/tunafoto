@@ -2,6 +2,7 @@ import FadeIn from "../components/FadeIn";
 import Image from "next/image";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
+
 export default function Contacto() {
   return (
     <section className="min-h-svh bg-white text-black px-4 sm:px-6 pt-24 sm:pt-28 pb-16 flex items-start">

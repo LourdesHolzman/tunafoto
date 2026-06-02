@@ -70,6 +70,7 @@ export const SOCIAL_LINKS = {
 export const NAV_LINKS = [
   { name: "FOTOGRAFÍA", href: "/fotografia" },
   { name: "VIDEO", href: "/video" },
+  { name: "IMPRESIONES", href: "/impresiones" },
   { name: "CLIENTE", href: "/clientes" },
   { name: "CONTACTO", href: "/contacto" },
 ];
