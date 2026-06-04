@@ -179,7 +179,7 @@ const ITEMS = [
     titulo: "Imágenes que permanecen.",
     descripcion:
       "Tus fotografías impresas y enmarcadas, listas para habitar tus espacios.",
-    image: "/cuadrogio.jpg",
+    image: "/cuadroo.jpg",
 
     contenido: (
       <div className="space-y-4">
