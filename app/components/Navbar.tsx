@@ -49,7 +49,7 @@ export default function Navbar() {
 
     // Swipe desde el borde derecho
     if (
-      startX > window.innerWidth - 40 &&
+      startX > window.innerWidth - 50 &&
       diffX < -80 &&
       diffY < 50 &&
       window.innerWidth < 768
