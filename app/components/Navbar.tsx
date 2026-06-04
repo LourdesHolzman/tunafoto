@@ -30,6 +30,47 @@ export default function Navbar() {
       document.body.style.overflow = "";
     }
   }, [open]);
+  
+  useEffect(() => {
+  let startX = 0;
+  let startY = 0;
+
+  const handleTouchStart = (e: TouchEvent) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: TouchEvent) => {
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+
+    const diffX = endX - startX;
+    const diffY = Math.abs(endY - startY);
+
+    // Swipe desde el borde derecho
+    if (
+      startX > window.innerWidth - 30 &&
+      diffX < -80 &&
+      diffY < 50 &&
+      window.innerWidth < 768
+    ) {
+      setOpen(true);
+    }
+  };
+
+  window.addEventListener("touchstart", handleTouchStart, {
+    passive: true,
+  });
+
+  window.addEventListener("touchend", handleTouchEnd, {
+    passive: true,
+  });
+
+  return () => {
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, []);
 
   const navbarStyle =
     isHome && !scrolled

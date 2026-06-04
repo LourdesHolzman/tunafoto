@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: "https://tunafoto.com",
     images: [
       {
-        url: "/emmaa.jpg",
+        url: "/tunalogo.png",
         width: 1200,
         height: 630,
         alt: "Tuna - Fotografía y video",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tuna - Fotografía y video",
     description: "Naturales, atemporales y espontáneas, capturando la esencia de cada historia. Sesiones de familia, infantil, embarazo, recién nacido, parejas, retratos y eventos.",
-    images: ["/emmaa.jpg"],
+    images: ["/tunalogo.png"],
   },
   robots: {
     index: true,
