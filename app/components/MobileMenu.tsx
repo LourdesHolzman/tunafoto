@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,10 +9,28 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ open, links, onClose }: MobileMenuProps) {
+  const startX = useRef(0);
+  const startY = useRef(0);
+
   return (
     <div
-      className={`fixed inset-0 bg-white z-[60] flex flex-col transition-all duration-500
-      ${open ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-10 pointer-events-none"}`}
+      onTouchStart={(e) => {
+      startX.current = e.touches[0].clientX;
+      startY.current = e.touches[0].clientY;
+    }}
+    onTouchEnd={(e) => {
+      const diffX = e.changedTouches[0].clientX - startX.current;
+      const diffY = Math.abs(
+        e.changedTouches[0].clientY - startY.current
+      );
+
+      // Swipe horizontal hacia la derecha
+      if (diffX > 80 && diffY < 50) {
+        onClose();
+      }
+    }}
+    className={`fixed inset-0 bg-white z-[60] flex flex-col transition-all duration-500
+    ${open ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-10 pointer-events-none"}`}
     >
       {/* Logo */}
       <div className="absolute top-6 left-6">
