@@ -137,12 +137,12 @@ export default function Navbar() {
 
           {/* BOTÓN MOBILE */}
           <button
-            className={`md:hidden absolute right-6 top-4 text-3xl z-50 transition-all
+            className={`md:hidden inline-flex items-center justify-center w-10 h-10 leading-none text-3xl z-50 transition-all
             ${isHome && !scrolled ? "text-white" : "text-black"}`}
             onClick={() => setOpen(!open)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
-            {open ? "✕" : "☰"}
+            <span aria-hidden className="block leading-none -mt-[2px]">{open ? "✕" : "☰"}</span>
           </button>
         </div>
       </nav>
