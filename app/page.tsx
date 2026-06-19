@@ -1,10 +1,6 @@
-import Hero from "./components/Hero";
+import ScrollLanding from "./components/ScrollLanding";
 
 export default function Home() {
-  return (
-    <div className="h-svh overflow-hidden">
-        <Hero />
-     </div>      
-    
-  );
+  return <ScrollLanding />;
 }
+

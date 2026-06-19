@@ -5,44 +5,53 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function Hero() {
+interface HeroProps {
+  embedded?: boolean;
+}
+
+export default function Hero({ embedded = false }: HeroProps) {
   const router = useRouter();
 
-useEffect(() => {
-  let startY = 0;
-  let navigated = false;
+  useEffect(() => {
+    if (embedded) return;
 
-  const handleTouchStart = (e: TouchEvent) => {
-    startY = e.touches[0].clientY;
+    let startY = 0;
+    let navigated = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (window.innerWidth >= 768) return;
+      if (navigated) return;
+
+      const endY = e.changedTouches[0].clientY;
+      const distance = startY - endY;
+
+      if (distance > 50) {
+        navigated = true;
+        router.push("/fotografia");
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [router, embedded]);
+
+  const handleArrow = (e: React.MouseEvent) => {
+    if (!embedded) return;
+    e.preventDefault();
+    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
   };
 
-  const handleTouchEnd = (e: TouchEvent) => {
-    if (window.innerWidth >= 768) return; // solo mobile
-    if (navigated) return;
-
-    const endY = e.changedTouches[0].clientY;
-    const distance = startY - endY;
-
-    if (distance > 50) {
-      navigated = true;
-      router.push("/fotografia");
-    }
-  };
-
-  window.addEventListener("touchstart", handleTouchStart);
-  window.addEventListener("touchend", handleTouchEnd);
-  
-
-  return () => {
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchend", handleTouchEnd);
-  };
-}, [router]);
-  
   return (
     <section className="relative h-svh w-full overflow-hidden" aria-label="Portada">
-
-      {/* Imagen de fondo (optimized by Next.js) */}
       <Image
         src="/emmaa.jpg"
         alt="Portada Tuna Fotografía"
@@ -60,10 +69,8 @@ useEffect(() => {
         className="object-cover object-center block md:hidden"
       />
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Contenido */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
         <p className="uppercase tracking-[0.2em] text-sm mb-4">
           Fotografía & Video
@@ -75,10 +82,11 @@ useEffect(() => {
 
         <Link
           href="/fotografia"
-className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 md:hidden"        >
+          onClick={handleArrow}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 md:hidden"
+        >
           ↓
         </Link>
-
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export default function MobileMenu({ open, links, onClose }: MobileMenuProps) {
     ${open ? "visible opacity-100 translate-y-0" : "invisible opacity-0 -translate-y-10 pointer-events-none"}`}
     >
       {/* Logo */}
-      <div className="absolute top-6 left-6">
+      <div className="absolute top-4 left-6 h-10 flex items-center">
         <Link href="/" onClick={onClose}>
           <Image src="/logo.svg" alt="Tuna Fotografía" width={120} height={28} className="h-7 invert opacity-70" loading="eager" />
         </Link>
@@ -41,11 +41,11 @@ export default function MobileMenu({ open, links, onClose }: MobileMenuProps) {
 
       {/* Close */}
       <button
-        className="absolute top-8 right-6 text-3xl"
+        className="absolute top-4 right-6 inline-flex items-center justify-center w-10 h-10 leading-none text-3xl"
         onClick={onClose}
         aria-label="Cerrar menú"
       >
-        ✕
+        <span aria-hidden className="block leading-none -mt-[2px]">✕</span>
       </button>
 
       {/* Links */}

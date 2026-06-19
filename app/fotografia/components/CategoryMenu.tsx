@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { CATEGORIAS } from "@/lib/constants";
 
 interface CategoryMenuProps {
@@ -8,22 +11,35 @@ interface CategoryMenuProps {
 }
 
 export default function CategoryMenu({ id, active, onSelect, className }: CategoryMenuProps) {
+  const activeBtnRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const btn = activeBtnRef.current;
+    if (!btn) return;
+    btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [active.slug]);
+
   return (
     <div className={className}>
-      {CATEGORIAS.map((cat) => (
-        <button
-          key={`${id}-${cat.slug}`}
-          onClick={() => onSelect(cat)}
-          className={`relative whitespace-nowrap transition-all duration-300 ${
-            active.slug === cat.slug ? "text-black" : "text-gray-400 hover:text-black"
-          }`}
-        >
-          {cat.name}
-          {active.slug === cat.slug && (
-            <span className="absolute left-0 -bottom-2 w-full h-[1px] bg-black" />
-          )}
-        </button>
-      ))}
+      {CATEGORIAS.map((cat) => {
+        const isActive = active.slug === cat.slug;
+        return (
+          <button
+            key={`${id}-${cat.slug}`}
+            ref={isActive ? activeBtnRef : undefined}
+            onClick={() => onSelect(cat)}
+            className={`relative whitespace-nowrap transition-all duration-300 ${
+              isActive ? "text-black" : "text-gray-400 hover:text-black"
+            }`}
+          >
+            {cat.name}
+            {isActive && (
+              <span className="absolute left-0 -bottom-2 w-full h-[1px] bg-black" />
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }
+
