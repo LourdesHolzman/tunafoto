@@ -29,7 +29,7 @@ function hashCode(code: string): string {
  */
 const MOCK_GALLERIES: Record<string, string> = {
   adhi001: "https://tuna27.pixieset.com/adhi/",
-  amelí: "https://tuna-118349.pixellu.gallery/ameli",
+  justi002: "https://tuna27.pixieset.com/justi/",
   alfon: "https://tuna27.pixieset.com/alfon-1/",
 };
 
